@@ -19,7 +19,7 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/sistema-recomendacao-cartas.git
+   git clone https://github.com/InatelS203/RecomedacaoCartas.git
 
 2. Navegue até o diretório do projeto:
    ```bash
