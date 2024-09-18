@@ -24,16 +24,19 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
 2. Navegue até o diretório do projeto:
    ```bash
    cd RecomendacaoCartas
+   ``` 
 
 3. Instale as dependências:
-  ```bash
-  npm install
-```
+    ```bash
+    npm install
+    ```
 
 4. Configure as variáveis de ambiente no arquivo .env:
-```bash
-  PORT=3000
-  DB_HOST=localhost
-  DB_USER=seu-usuario
-  DB_PASSWORD=sua-senha
-  DB_NAME=nome-do-banco
+    ```bash
+    PORT=3000
+    DB_HOST=localhost
+    DB_USER=seu-usuario
+    DB_PASSWORD=sua-senha
+    DB_NAME=nome-do-banco
+    ```
+![schema.png](assets/schema.jpg)
