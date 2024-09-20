@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"  # Expose the PostgreSQL port to your machine
     volumes:
-      - postgres_data:/var/lib/postgresql/data  # Persist data on host machine
+      - ./postgres_data:/var/lib/postgresql/data  # Persist data on host machine
 
 volumes:
   postgres_data:

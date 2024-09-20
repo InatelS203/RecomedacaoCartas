@@ -131,3 +131,5 @@ dist
 
 # Rest files
 *.rest
+
+postgres_data/
