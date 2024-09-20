@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com"
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "name": "Fire Dragon",
+      "attack": 80,
+      "defense": 60,
+      "type": "Dragon",
+      "cost": 5,
+      "speed": 7
+    },
+    {
+      "id": 2,
+      "name": "Water Serpent",
+      "attack": 50,
+      "defense": 70,
+      "type": "Serpent",
+      "cost": 4,
+      "speed": 6
+    },
+    {
+      "id": 3,
+      "name": "Earth Golem",
+      "attack": 60,
+      "defense": 90,
+      "type": "Golem",
+      "cost": 6,
+      "speed": 4
+    },
+    {
+      "id": 4,
+      "name": "Wind Falcon",
+      "attack": 40,
+      "defense": 30,
+      "type": "Bird",
+      "cost": 3,
+      "speed": 9
+    },
+    {
+      "id": 5,
+      "name": "Shadow Assassin",
+      "attack": 70,
+      "defense": 40,
+      "type": "Human",
+      "cost": 5,
+      "speed": 8
+    }
+  ],
+  "decks": [
+    {
+      "userId": 1,
+      "cards": [
+        {
+          "cardId": 1,
+          "quantity": 2
+        },
+        {
+          "cardId": 4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "userId": 2,
+      "cards": [
+        {
+          "cardId": 2,
+          "quantity": 3
+        },
+        {
+          "cardId": 5,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "cards": [
+        {
+          "cardId": 3,
+          "quantity": 2
+        },
+        {
+          "cardId": 1,
+          "quantity": 1
+        },
+        {
+          "cardId": 5,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
