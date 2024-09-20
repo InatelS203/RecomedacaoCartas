@@ -1,24 +1,17 @@
 const express = require('express');
+const cors = require('cors');
+const db = require('./db')
+const routes = require('./src/routes')
+
 const app = express();
-const pool = require('./db')
 const port = 3000;
 
+app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+db.sequelize.authenticate().then(() => console.log("Authenticated")).catch(err => console.error(err))
 
-// Rota para inicializar o banco de dados
-app.get('/initialize-db', async (req, res) => {
-    try {
-        await pool.query('create database cardgame');
-    } catch (err){
-        console.log(err)
-        res.sendStatus(500)
-    }
-})
-
+app.use('/api', routes)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
