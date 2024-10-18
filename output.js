@@ -1,26 +1,42 @@
 {
-  "recommended_cards": [
+  "avg_cost": null,
+  "avg_speed": null,
+  "max_attack": {
+    "card_id": null,
+    "name": null,
+    "type": null,
+    "rarity": null,
+    "attributes": {
+      "damage": null,
+      "mana_cost": null,
+      "speed": null
+    },
+    "description": null
+  },
+  "cards": [
     {
-      "card_id": 123,
-      "name": "Dragon Slayer",
-      "type": "Attack",
-      "rarity": "Legendary",
+      "card_id": null,
+      "name": null,
+      "type": null,
+      "rarity": null,
       "attributes": {
-        "damage": 50,
-        "mana_cost": 10
+        "damage": null,
+        "mana_cost": null,
+        "speed": null
       },
-      "description": "A powerful attack card for dealing high damage."
+      "description": null
     },
     {
-      "card_id": 456,
-      "name": "Healing Potion",
-      "type": "Support",
-      "rarity": "Common",
+      "card_id": null,
+      "name": null,
+      "type": null,
+      "rarity": null,
       "attributes": {
-        "heal_amount": 30,
-        "mana_cost": 5
+        "heal_amount": null,
+        "mana_cost": null,
+        "speed": null
       },
-      "description": "Restores a moderate amount of health."
+      "description": null
     }
   ]
 }
