@@ -22,7 +22,7 @@
       "name": "Fire Dragon",
       "attack": 80,
       "defense": 60,
-      "type": "Dragon",
+      "type": "magico",
       "cost": 5,
       "speed": 7
     },
@@ -31,7 +31,7 @@
       "name": "Water Serpent",
       "attack": 50,
       "defense": 70,
-      "type": "Serpent",
+      "type": "magico",
       "cost": 4,
       "speed": 6
     },
@@ -40,7 +40,7 @@
       "name": "Earth Golem",
       "attack": 60,
       "defense": 90,
-      "type": "Golem",
+      "type": "distancia",
       "cost": 6,
       "speed": 4
     },
@@ -49,7 +49,7 @@
       "name": "Wind Falcon",
       "attack": 40,
       "defense": 30,
-      "type": "Bird",
+      "type": "distancia",
       "cost": 3,
       "speed": 9
     },
@@ -58,7 +58,7 @@
       "name": "Shadow Assassin",
       "attack": 70,
       "defense": 40,
-      "type": "Human",
+      "type": "corpo",
       "cost": 5,
       "speed": 8
     }
