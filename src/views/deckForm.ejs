@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Deck</title>
+</head>
+<body>
+  <h1>Escolha o tipo de Deck</h1>
+  
+  <form id="deckForm" action="/generateDeck" method="POST">
+    <label for="type">Tipo de Deck:</label>
+    <select name="type" id="type">
+      <option value="magico">Mágico</option>
+      <option value="corpo">Corpo a corpo</option>
+      <option value="distancia">Distância</option>
+    </select>
+    <button type="submit">Gerar Deck</button>
+  </form>
+
+  <div id="deckResult">
+    <!-- O resultado das cartas será exibido aqui -->
+  </div>
+
+  <script>
+    // Capturar a submissão do formulário via AJAX
+    const form = document.getElementById('deckForm');
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const type = formData.get('type');
+
+        console.log(type);
+
+      try {
+        const response = await fetch('/api/generateDeck', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ type }),
+        });
+        
+        const result = await response.json();
+        console.log(result);
+        document.getElementById('deckResult').innerHTML = `
+          <h2>Resultado do Deck</h2>
+          <p>Custo Médio: ${result.avg_cost}</p>
+          <p>Velocidade Média: ${result.avg_speed}</p>
+          <h3>Carta com Maior Ataque</h3>
+          <p>Nome: ${result?.max_attack.name}</p>
+          <p>Dano: ${result?.max_attack?.attack}</p>
+          <h3>Cartas do Deck</h3>
+          <ul>
+            ${result?.cards.map(card => `<li>${card?.name} - Dano: ${card?.attack}</li>`).join('')}
+          </ul>
+        `;
+      } catch (error) {
+        console.error('Erro ao gerar o deck', error);
+      }
+    });
+  </script>
+</body>
+</html>
