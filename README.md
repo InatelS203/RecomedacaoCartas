@@ -13,7 +13,7 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
 
 - **Node.js**: Plataforma de desenvolvimento.
 - **Express**: Framework para Node.js.
-- **MySQL**: Banco de dados relacional para armazenamento das cartas e recomendações.
+- **PostgreSQL**: Banco de dados relacional para armazenamento das cartas e recomendações.
 
 ## Instalação
 
@@ -40,3 +40,15 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
     DB_NAME=nome-do-banco
     ```
 ![schema.png](assets/schema.jpg)
+
+## Estrutura de pastas
+
+- ```src/controller:```
+    - deck.controller: faz um CRUD com o model para manipular as cartas no banco de dados.
+    - Função generateDeck, que é a principal utilizada. Usada para a geração do deck de cartas.
+
+- ```src/models:``` 
+    - utiliza um ORM (sequelize) pra fazer as operações com o banco de dados. Abstrai a linguagem SQL.
+
+- ```src/views:```
+    - deckForm.ejs: é um frontend que é entregue para o cliente, em que ele pode testar a geração de decks.
