@@ -11,6 +11,17 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
 - **View**: Responsável pela interface do usuário e apresentação dos dados.
 - **Controller**: Responsável por receber as requisições do usuário, processar os dados através do Model e retornar a resposta adequada através da View.
 
+## Endpoints:
+
+- /generateDeck (POST):
+    - Um POST request com o tipo de cartas desejados que retorna um conjunto de cartas selecionados (um deck)
+
+- /createDeck (POST):
+    - Um POST request com as cartas desejadas em um deck. Cria um deck pronto no banco de dados
+
+- /deckForm (GET):
+    - Um GET request que retorna uma página HTML com opções de criação e geração de decks por interface
+
 ## Tecnologias Utilizadas
 
 - **Node.js**: Plataforma de desenvolvimento.
