@@ -1,6 +1,8 @@
 # Recomendação de cartas
 Este projeto foi desenvolvido para a disciplina de **Arquitetura de Software**. O objetivo é criar um sistema de recomendação de cartas para um jogo, utilizando o padrão de arquitetura **MVC** (Model-View-Controller) com **Node.js** e **Express**.
 
+
+![diagrama.png](assets/Diagrama.png)
 ## Estrutura do Projeto
 
 O projeto segue a estrutura **MVC**, dividindo a aplicação em três componentes principais:
@@ -8,6 +10,17 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
 - **Model**: Responsável pela lógica de dados e interação com o banco de dados.
 - **View**: Responsável pela interface do usuário e apresentação dos dados.
 - **Controller**: Responsável por receber as requisições do usuário, processar os dados através do Model e retornar a resposta adequada através da View.
+
+## Endpoints:
+
+- /generateDeck (POST):
+    - Um POST request com o tipo de cartas desejados que retorna um conjunto de cartas selecionados (um deck)
+
+- /createDeck (POST):
+    - Um POST request com as cartas desejadas em um deck. Cria um deck pronto no banco de dados
+
+- /deckForm (GET):
+    - Um GET request que retorna uma página HTML com opções de criação e geração de decks por interface
 
 ## Tecnologias Utilizadas
 
