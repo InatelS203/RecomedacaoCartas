@@ -1,6 +1,8 @@
 # Recomendação de cartas
 Este projeto foi desenvolvido para a disciplina de **Arquitetura de Software**. O objetivo é criar um sistema de recomendação de cartas para um jogo, utilizando o padrão de arquitetura **MVC** (Model-View-Controller) com **Node.js** e **Express**.
 
+
+![diagrama.png](../assets/Diagrama.png)
 ## Estrutura do Projeto
 
 O projeto segue a estrutura **MVC**, dividindo a aplicação em três componentes principais:
@@ -39,7 +41,7 @@ O projeto segue a estrutura **MVC**, dividindo a aplicação em três componente
     DB_PASSWORD=sua-senha
     DB_NAME=nome-do-banco
     ```
-![schema.png](assets/schema.jpg)
+![schema.png](../assets/schema.jpg)
 
 ## Estrutura de pastas
 
