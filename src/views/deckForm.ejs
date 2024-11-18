@@ -1,65 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerar Deck</title>
-</head>
-<body>
-  <h1>Escolha o tipo de Deck</h1>
-  
-  <form id="deckForm" action="/generateDeck" method="POST">
-    <label for="type">Tipo de Deck:</label>
-    <select name="type" id="type">
-      <option value="magico">Mágico</option>
-      <option value="corpo">Corpo a corpo</option>
-      <option value="distancia">Distância</option>
-    </select>
-    <button type="submit">Gerar Deck</button>
-  </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 
-  <div id="deckResult">
-    <!-- O resultado das cartas será exibido aqui -->
-  </div>
+    <title>Gerar Deck</title>
+  </head>
+  <body class="d-flex flex-column align-items-center h-100 mt-5">
+    <h1>Escolha o tipo de Deck</h1>
 
-  <script>
-    // Capturar a submissão do formulário via AJAX
-    const form = document.getElementById('deckForm');
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
+    <form
+      id="deckForm"
+      action="/generateDeck"
+      method="POST"
+      class="d-flex align-items-center gap-3"
+    >
+      <label for="type">Tipo de Deck:</label>
+      <select name="type" id="type" class="rounded p-1">
+        <option value="magico">Mágico</option>
+        <option value="corpo">Corpo a corpo</option>
+        <option value="distancia">Distância</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Gerar Deck</button>
+    </form>
 
-      const formData = new FormData(form);
-      const type = formData.get('type');
+    <div id="deckResult" class="d-flex justify-content-around gap-3 mt-5">
+      <!-- O resultado das cartas será exibido aqui -->
+    </div>
+
+    <script>
+      // Capturar a submissão do formulário via AJAX
+      const form = document.getElementById("deckForm");
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const type = formData.get("type");
 
         console.log(type);
 
-      try {
-        const response = await fetch('/api/generateDeck', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ type }),
-        });
-        
-        const result = await response.json();
-        console.log(result);
-        document.getElementById('deckResult').innerHTML = `
-          <h2>Resultado do Deck</h2>
-          <p>Custo Médio: ${result.avg_cost}</p>
-          <p>Velocidade Média: ${result.avg_speed}</p>
-          <h3>Carta com Maior Ataque</h3>
-          <p>Nome: ${result?.max_attack.name}</p>
-          <p>Dano: ${result?.max_attack?.attack}</p>
-          <h3>Cartas do Deck</h3>
-          <ul>
-            ${result?.cards.map(card => `<li>${card?.name} - Dano: ${card?.attack}</li>`).join('')}
-          </ul>
+        try {
+          const response = await fetch("/api/generateDeck", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ type }),
+          });
+
+          const result = await response.json();
+          console.log(result);
+          document.getElementById("deckResult").innerHTML = `
+          <div class="border rounded p-3">
+            <h3 class='fs-5'>Resultado do Deck</h3>
+            <p>Custo Médio: ${result.avg_cost}</p>
+            <p>Velocidade Média: ${result.avg_speed}</p>
+          </div>
+          <div class="border rounded p-3">  
+            <h3 class='fs-5'>Carta com Maior Ataque</h3>
+            <p>Nome: ${result?.max_attack.name}</p>
+            <p>Dano: ${result?.max_attack?.attack}</p>
+          </div>
+
+          <div class="border rounded p-3">
+            <h3 class='fs-5'>Cartas do Deck</h3>
+            <ul>
+              ${result?.cards
+                .map((card) => `<li>${card?.name} - Dano: ${card?.attack}</li>`)
+                .join("")}
+            </ul>
+          </div>
+          
         `;
-      } catch (error) {
-        console.error('Erro ao gerar o deck', error);
-      }
-    });
-  </script>
-</body>
+        } catch (error) {
+          console.error("Erro ao gerar o deck", error);
+        }
+      });
+    </script>
+  </body>
 </html>
