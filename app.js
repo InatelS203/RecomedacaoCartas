@@ -15,6 +15,8 @@ app.set("views", path.join(__dirname, "src", "views"));
 app.use(cors());
 app.use(express.json());
 
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+
 db.sequelize
   .authenticate()
   .then(() => console.log("Authenticated"))
