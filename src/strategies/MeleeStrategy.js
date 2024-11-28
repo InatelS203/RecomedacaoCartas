@@ -1,8 +1,9 @@
+const DBAdapter = require("../adapters/DBAdapter");
 const { calculateDeckMetadata } = require("../utils/calculateDeckMetadata");
 
 class MeleeStrategy {
   static async build(Card) {
-    const cards = await Card.findAll({ where: { type: "corpo" } });
+    const cards = await DBAdapter.findAllEntityWithType(Card, "corpo")
 
     if (cards.length === 0) {
       return {
