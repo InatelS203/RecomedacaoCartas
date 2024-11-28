@@ -1,4 +1,20 @@
 # Recomendação de cartas
+
+## Design Patterns usados no projeto:
+
+### Singleton
+
+![singleton](./assets/singleton.png)
+
+### Strategy
+
+![singleton](./assets/strategy.png)
+
+### Adapter
+
+![singleton](./assets/adapter.png)
+
+
 Este projeto foi desenvolvido para a disciplina de **Arquitetura de Software**. O objetivo é criar um sistema de recomendação de cartas para um jogo, utilizando o padrão de arquitetura **MVC** (Model-View-Controller) com **Node.js** e **Express**.
 
 
