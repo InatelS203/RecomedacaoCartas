@@ -1,8 +1,9 @@
+const DBAdapter = require("../adapters/DBAdapter");
 const { calculateDeckMetadata } = require("../utils/calculateDeckMetadata");
 
 class RangeStrategy {
   static async build(Card) {
-    const cards = await Card.findAll({ where: { type: "distancia" } });
+    const cards = await DBAdapter.findAllEntityWithType(Card, "distancia")
 
     if (cards.length === 0) {
       return {
